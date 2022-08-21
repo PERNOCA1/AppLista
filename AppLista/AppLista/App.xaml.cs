@@ -19,13 +19,13 @@ namespace AppLista
                     string path = Path.Combine(
                         Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
                         "arquivo.db3"
-                        );
+                      );
 
                     database = new SQLiteDatabaseHelper(path);
                 }
 
                 return database;
-                /* 44min*/
+              
             }
         }
 
@@ -33,7 +33,7 @@ namespace AppLista
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new View.Listagem());
         }
 
         protected override void OnStart()

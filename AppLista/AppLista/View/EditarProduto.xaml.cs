@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Forms;
 
-namespace AppLista
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace AppLista.View
 {
-    public partial class MainPage : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class EditarProduto : ContentPage
     {
-        public MainPage()
+        public EditarProduto()
         {
             InitializeComponent();
         }
