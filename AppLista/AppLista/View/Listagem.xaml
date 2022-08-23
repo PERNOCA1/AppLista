@@ -12,7 +12,8 @@
     <ContentPage.Content>
         <StackLayout>
 
-            <SearchBar x:Name="txt_busca" Placeholder="Qual Produto?"/>
+            <SearchBar x:Name="txt_busca" Placeholder="Qual Produto?"
+                       TextChanged="txt_busca_TextChanged"/>
 
             <RefreshView x:Name="ref_carregando" IsRefreshing="True">
 
@@ -29,6 +30,9 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
+                                <ViewCell.ContextActions>
+                                    <MenuItem Text="Remover" Clicked="MenuItem_Clicked" />
+                                </ViewCell.ContextActions>
 
                                 <Grid RowDefinitions="Auto"
                                       ColumnDefinitions="*, Auto, Auto">

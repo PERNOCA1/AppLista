@@ -65,6 +65,39 @@ namespace AppLista.View
            
         }
 
+        private async void MenuItem_Clicked(object sender, EventArgs e)
+        {
+            MenuItem disparador = (MenuItem)sender;
 
+            Produto produto_selecionado = (Produto)disparador.BindingContext;
+            
+            Boolean confirmacao = await DisplayAlert("Tem certeza?", "Remover Item?", "Sim", "Não");
+
+            if (confirmacao)
+            {
+                await App.Database.Delete(produto_selecionado.Id);
+
+                lista_produtos.Remove(produto_selecionado);
+            }
+        }
+
+        private void txt_busca_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string buscou = e.NewTextValue;
+
+            System.Threading.Tasks.Task.Run(async () =>
+            {
+                List<Produto> temp = await App.Database.Search(buscou);
+
+                lista_produtos.Clear();
+
+                foreach (Produto item in temp)
+                {
+                    lista_produtos.Add(item);
+                }
+
+                ref_carregando.IsRefreshing = false;
+            });
+        }
     }
 }
