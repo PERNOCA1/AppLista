@@ -12,3 +12,6 @@
 ### - Apresentar esses produtos na tela para o usuário.
 ### - Conseguir pesquisar qual produto a buscar.
 ### - Tem como remover produto da lista.
+#
+## - NESSE APP TEM O SALVAMENTO DE TODOS OS PRODUTOS ADICONADOS POR MEIO DO SQLite:
+Uma biblioteca em linguagem C que implementa um banco de dados SQL embutido,assim a qualquer momento que abrir esse app estara todos os produtos ja adicionados anteriormente.
